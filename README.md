@@ -30,3 +30,10 @@ git push -u origin main
 ```
 EditorConfig for VS Code
 ```
+
+## 安装配置.prettierrc
+
+统一代码规范
+配置.prettierignore
+package.json 中的 script 中配置
+"prettier": "prettier --write ."
