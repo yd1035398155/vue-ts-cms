@@ -1,6 +1,6 @@
-# vue-ts-cms 开发流程
+# 项目初始化
 
-# vue-cli 搭建项目
+## vue-cli 搭建项目
 
 ```
 vue create vue-ts-cms
@@ -12,7 +12,7 @@ Css pre-process
 Linter/Formatter 代码规范
 ```
 
-# github 托管代码
+## github 托管代码
 
 github 上先创建一个仓库 vue-ts-cms
 
@@ -20,4 +20,13 @@ github 上先创建一个仓库 vue-ts-cms
 git remote add origin https://github.com/yd1035398155/vue-ts-cms.git
 git branch -M main
 git push -u origin main
+```
+
+## 配置.editorconfig
+
+实现多人开发代码的统一.
+配置好后,vscode 需安装插件
+
+```
+EditorConfig for VS Code
 ```
