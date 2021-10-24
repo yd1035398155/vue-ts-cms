@@ -143,3 +143,39 @@ export default store
 ```
 
 ## 最后在 main.js 中注册
+
+# Element-plus 配置(PC 端)
+
+安装 element-plus
+
+```shell
+npm install element-plus
+```
+
+可选择
+全局引入:集成简单,但会打包整个 Element-Plus
+
+```js
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+
+import router from './router'
+import store from './store'
+
+createApp(App).use(router).use(store).use(ElementPlus).mount('#app')
+```
+
+局部引入:包会小一些,但引用比较麻烦,可查看官方文档自动局部引入
+
+```js
+import { defineComponent } from 'vue'
+
+import { ElButton } from 'element-plus'
+
+export default defineComponent({
+  name: 'App',
+  components: {
+    ElButton
+  }
+})
+```
