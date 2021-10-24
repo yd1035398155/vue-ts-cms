@@ -99,3 +99,47 @@ module.exports = {
 ```shell
 npx husky add .husky/commit-msg "npx --no-install commitlint --edit $1"
 ```
+
+# 配置 router 和 vuex
+
+## 创建文件夹 router,创建 index.ts
+
+```ts
+import { createRouter, createWebHashHistory } from 'vue-router'
+import { RouteRecordRaw } from 'vue-router'
+const routes: RouteRecordRaw[] = [
+  {
+    path: '/',
+    redirect: '/login'
+  },
+  {
+    path: '/login',
+    component: () => import('@/views/login/login.vue')
+  },
+  {
+    path: '/main',
+    component: () => import('@/views/main/main.vue')
+  }
+]
+const router = createRouter({
+  routes,
+  history: createWebHashHistory()
+})
+export default router
+```
+
+## 创建文件夹 store,创建 index.ts
+
+```ts
+import { createStore } from 'vuex'
+const store = createStore({
+  state: () => {
+    return {
+      name: 'coderwhy'
+    }
+  }
+})
+export default store
+```
+
+## 最后在 main.js 中注册
