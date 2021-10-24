@@ -75,3 +75,27 @@ npx commitizen init cz-conventional-changelog --save-dev --save-exact
 | ci       | 更改持续集成软件的配置文件和 package 中的 scripts 命令，例如 scopes: Travis, Circle 等 |
 | chore    | 变更构建流程或辅助工具(比如更改测试环境)                                               |
 | revert   | 代码回退                                                                               |
+
+如果我们按照 cz 来规范了提交风格，但是依然有同事通过 `git commit` 按照不规范的格式提交应该怎么办呢？
+
+- 我们可以通过 commitlint 来限制提交；
+
+  1.安装 @commitlint/config-conventional 和 @commitlint/cli
+
+```shell
+npm i @commitlint/config-conventional @commitlint/cli -D
+```
+
+2.在根目录创建 commitlint.config.js 文件，配置 commitlint
+
+```js
+module.exports = {
+  extends: ['@commitlint/config-conventional']
+}
+```
+
+3.使用 husky 生成 commit-msg 文件，验证提交信息：
+
+```shell
+npx husky add .husky/commit-msg "npx --no-install commitlint --edit $1"
+```
