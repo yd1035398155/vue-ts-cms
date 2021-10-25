@@ -165,7 +165,7 @@ import store from './store'
 createApp(App).use(router).use(store).use(ElementPlus).mount('#app')
 ```
 
-局部引入:包会小一些,但引用比较麻烦,可查看官方文档自动局部引入
+局部引入:包会小一些,但引用比较麻烦,
 
 ```js
 import { defineComponent } from 'vue'
@@ -179,3 +179,10 @@ export default defineComponent({
   }
 })
 ```
+
+可查看官方文档自动局部引入,直接使用就可以自动引入元素和样式
+
+# Axios 封装
+
+npm i axios
+默认为安装在生产环境 -S 生产环境 -D 开发环境
