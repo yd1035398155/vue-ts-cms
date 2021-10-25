@@ -11,5 +11,15 @@ app.use(store)
 app.mount('#app')
 ydrequest.request({
   url: '/home/multidata',
-  method: 'GET'
+  method: 'GET',
+  interceptors: {
+    requestInterceptor: (config) => {
+      console.log('单独响应的config')
+      return config
+    },
+    responseInterceptor: (res) => {
+      console.log('单独响应的response')
+      return res
+    }
+  }
 })

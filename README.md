@@ -187,7 +187,7 @@ export default defineComponent({
 npm i axios
 默认为安装在生产环境 -S 生产环境 -D 开发环境
 
-# 区分环境变量
+## 区分环境变量
 
 生产环境和开发环境
 
@@ -197,3 +197,5 @@ npm i axios
   然后通过 process.env.VUE*APP\*** 来使用
 
   npm run build 打包后的文件在生产环境下,修改 vue.config.js,配置 publicPath: './'以解决资源加载问题,在部署到服务器时要删掉该配置
+
+## 为 Axios 配置拦截器 service
