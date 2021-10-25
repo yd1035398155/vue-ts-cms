@@ -186,3 +186,14 @@ export default defineComponent({
 
 npm i axios
 默认为安装在生产环境 -S 生产环境 -D 开发环境
+
+# 区分环境变量
+
+生产环境和开发环境
+
+- 1.手动区分
+- 2.根据 process.env.NODE\*ENV 来区分
+- 3.创建.env.development,.env.production,.env.test 设置环境变量,但必须以 VUE_APP***开头
+  然后通过 process.env.VUE*APP\*** 来使用
+
+  npm run build 打包后的文件在生产环境下,修改 vue.config.js,配置 publicPath: './'以解决资源加载问题,在部署到服务器时要删掉该配置
