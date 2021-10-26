@@ -1,14 +1,9 @@
 <template>
   <div>
     <h3>后台管理系统</h3>
-    <router-link to="/login">
-      <el-button type="primary">登录</el-button>
-    </router-link>
-    <router-link to="/main">
-      <el-button type="danger">首页</el-button>
-    </router-link>
+    <router-link to="/login"> 登录 </router-link>
+    <router-link to="/main"> 首页 </router-link>
     <router-view></router-view>
-
     <el-button type="primary" plain disabled>Primary</el-button>
     <el-button type="success" plain>Success</el-button>
     <el-button type="info" plain>Info</el-button>

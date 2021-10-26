@@ -4,9 +4,14 @@ const ydrequest = new YDRequest({
   baseURL: BASE_URL,
   timeout: TIME_OUT,
   interceptors: {
-    requestInterceptor: (res) => {
+    requestInterceptor: (config) => {
+      // 携带token的拦截
+      const token = ''
+      if (token && config.headers) {
+        config.headers.Authorization = `Bearer ${token}`
+      }
       console.log('请求成功的拦截')
-      return res
+      return config
     },
     requestInterceptorCatch: (err) => {
       console.log('请求失败的拦截')
