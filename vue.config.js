@@ -1,4 +1,4 @@
-// const path = require('path')
+const path = require('path')
 const Components = require('unplugin-vue-components/webpack')
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 module.exports = {
@@ -7,7 +7,9 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        views: '@/views'
+        '@': path.resolve(__dirname, 'src'),
+        views: '@/views',
+        components: '@/components'
       }
     },
     plugins: [

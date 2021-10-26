@@ -58,7 +58,7 @@ class YDRequest {
     )
   }
   // 单独请求的拦截器
-  request<T>(config: YDRequestConfig): Promise<T> {
+  request<T>(config: YDRequestConfig<T>): Promise<T> {
     return new Promise((resolve, reject) => {
       // 单个请求对请求config的处理
       if (config.interceptors?.requestInterceptor) {
@@ -88,16 +88,16 @@ class YDRequest {
         })
     })
   }
-  get<T>(config: YDRequestConfig): Promise<T> {
+  get<T>(config: YDRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: 'GET' })
   }
-  post<T>(config: YDRequestConfig): Promise<T> {
+  post<T>(config: YDRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: 'POST' })
   }
-  delete<T>(config: YDRequestConfig): Promise<T> {
+  delete<T>(config: YDRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: 'DELETE' })
   }
-  patch<T>(config: YDRequestConfig): Promise<T> {
+  patch<T>(config: YDRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: 'PATCH' })
   }
 }

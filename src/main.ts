@@ -2,7 +2,8 @@ import { createApp } from 'vue'
 import rootApp from './App.vue'
 import router from './router'
 import store from './store'
-// import './service/axios_deme'
+import 'normalize.css'
+import './assets/css/index.less'
 import ydrequest from './service'
 const app = createApp(rootApp)
 
