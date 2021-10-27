@@ -199,3 +199,9 @@ npm i axios
   npm run build 打包后的文件在生产环境下,修改 vue.config.js,配置 publicPath: './'以解决资源加载问题,在部署到服务器时要删掉该配置
 
 ## 为 Axios 配置拦截器 service
+
+# 开发登录页面
+
+## 表单规则
+
+编写好规则后,利用 :rules 进行绑定,在对应的 item 上 加 prop = 'property',最后:model = 'account'实时获取最新的输入
