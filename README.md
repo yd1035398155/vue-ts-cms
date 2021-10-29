@@ -205,3 +205,5 @@ npm i axios
 ## 表单规则
 
 编写好规则后,利用 :rules 进行绑定,在对应的 item 上 加 prop = 'property',最后:model = 'account'实时获取最新的输入
+
+coderwhy 从 35 集看
